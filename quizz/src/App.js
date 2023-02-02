@@ -1,20 +1,21 @@
-import { useState } from "react";
-import menu from "./component/menu";
-import quizz from "./component/quizz";
-import score from "./component/Score";
+import { createContext,useState } from "react";
+import Menu from "./component/menu";
+import Quizz from "./component/quizz";
+import Score from "./component/Score";
+
+export const DataContext=createContext()
 
 function App() {
-  const [appState,setAppState]=useState("menu")
+  const [appState,setAppState]=useState("Menu")
   return (
-    <div className="App">
-      <h1>Web development quizz</h1>
-        {appState==="menu"&&<Menu/>}
-        {appState==="quizz"&&<Quizz/>}
-        {appState==="score"&&<Score/>}
-    </div>
-      
-
-
+    <DataContext.Provider value={{appState,setAppState}}>
+      <div className="App">
+        <h1>Web development quizz</h1>
+        {appState==="Menu"&&<Menu/>}
+        {appState==="Quizz"&&<Quizz/>}
+        {appState==="Score"&&<Score/>}
+      </div>
+    </DataContext.Provider>
   );
 }
 
