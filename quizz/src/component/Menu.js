@@ -6,8 +6,8 @@ const Menu=()=>{
     return(
         <div className="menu">
         <h1>Menu Component</h1>
-        <button onClick={()=>setAppState("Quizz")}>เริ่มทำแบบทดสอบ</button>
+        <button onClick={()=>setAppState("quizz")}>เริ่มทำแบบทดสอบ</button>
         </div>
     )
 }
-export default Menu
+export default Menu;
