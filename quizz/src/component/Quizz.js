@@ -9,6 +9,7 @@ const Quizz=()=>{
 
     useEffect(()=>{
         checkAnswer()
+        // eslint-disable-next-line
     },[selectchoice])
 
     const checkAnswer=()=>{
@@ -26,8 +27,9 @@ const Quizz=()=>{
         setSelectChoice("")
         if(current===QuestionsData.length-1){
             setAppState("score")
+        }else{
+            setCurrent(current+1)
         }
-        setCurrent(current+1)
     }
 
     return(
